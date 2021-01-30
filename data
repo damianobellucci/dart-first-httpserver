@@ -1,0 +1,98 @@
+***1)Introduzione alla crittografia
+-tipi di attaccante
+-principio kerkchoff
+-cifrario cesare
+-cifrari a rotazione
+-cifrario a sostituzione monoalfabetica
+-attacchi statistici
+-cifrario di Vigenére (sostituzione polialfabetica)
+-morale cifrari storici
+-cifrari storici
+
+***2)La sicurezza perfetta
+-limiti sicurezza perfetta
+-definizione sicurezza perfetta e i lemmi derivati
+-cifrario vernam (one time pad)
+-limitazioni generali schemi di codifica perfettamente sicuri (teorema)
+-codifiche perfettamente indistinguibili (Def) con teorema che lo collega a sicurezza perfetta
+
+
+
+***3)schemi di codifica a chiave segreta
+-rilassamento sicurezza perfetta
+-def avversario efficiente
+-parametro di sicurezza n
+-approccio asintotico
+-def PPT
+-funzione trascurabile def e suo lemma
+-risorse limitate e attacchi possibili
+-prove per riduzione
+-nuova definizione schema di codifica
+-esperimento PrivK^eav
+-sicurezza contro attacchi passivi def
+-generatore pseudocasuale def
+-considerazioni sui generatori pseudocasuali
+-gestione messaggi a lunghezza variabile
+-schema indotto da un GP: pigrecoG def  e teorema annesso con dimostrazione
+-gestione messaggi a lunghezza variabile
+-generatore pseudocasuale a lunghezza variable def
+-codifiche multiple privk^mult e suo lemma con schema pigreco^G
+-enc deterministico, allora pigreco (anche pigrecoG quindi) non può essere sicuro rispetto a privKmult (teorema con DIM)
+-modo operativo sincrono (con o senza initialization vector)
+-(perchè per codifiche multiple(cioè quando avversario passivo può leggere non solo una ma più crittogrammi) non si ha più sicurezza sia per pigrecoG che per pigreco nel caso in cui Enc sia deterministico^ Come si può ovviare a questo?)
+-(Sicurezza contro attacchi CPA e relativo lemma con DIM su sicurezza pigreco rispetto a PrivKCPA e lemma per cui se pigreco è sicuro rispetto a PrivKCPA allora Enc deve essere probabilistico)
+-peccato originale cifrari pigreco con Enc deterministico
+-TH ogni pigreco che è CPA sicuro è sicuro anche in presenza di codifiche multiple
+-costruire cifrario CPA sicuro
+-funzioni pseudocasuali
+-schema indotto da funzione pseudocasuale per schema di codifica CPA sicuro
+-TH se F e è FP allora pigrecoF è sicuro contro attacchi CPA
+-gestione messaggi a lunghezza variabile in pigrecoF contro attacchi CPA e relativo teorema
+-permutazioni pseudocasuali
+-modi operativi ECB CBC OFB CTR
+
+
+
+***4)Schemi codifica a chiave segreta
+-mac equivalente su autenticità di cifrario pigreco per confidenzialità
+-costituzione mac
+-macforgeA,pigreco(n)
+-definizione sicurezza mac e commenti su di essa
+-attacchi replay
+-def mac indotto da una funzione pseudocasuale
+-se F pseudocasuale, allora mac pigrecoF è sicuro
+-messaggi a lunghezza variabile in MAC
+-se pigreco è sicuro, anche pigreco* è sicuro
+-CBC MAC con suo teorema di sicureza,
+-se l è un polinomio e F è FP, allora pigrecoCBC è un mac sicuro
+-funzioni hash(Def)
+-hashcollA,pigreco(n)
+-funzione hash resistente alle collisioni
+-nozioni deboli sicurezza mac
+-attacchi birthday
+-trasformazione di merkle damgard
+-per cosa ci servono le funzioni hash?
+-th se pigreco è mac sicuro e funzione hash è resistente alle collisioni, allora pigrecoH è sicuro
+***5)Costruire oggetti pseudocasuali e funzioni hash in concreto
+-cifrari flusso
+-registro a scorrimento retroazione lineare
+-init e getbit
+-rc4
+-sobstitution permutation network
+-linee guita sobstitution permutation network
+-reti di Feistel
+-DES
+-AES
+-costruzione davies meyer
+-md5 sha1 sha2 sha3
+
+
+
+***6)Costruire oggetti pseudocasuali e funzioni hash in astratto
+-funzioni one way def
+-predicati hardcore (def)
+-th goldreich levin
+-th da permutazioni one way a generatori pseudocasuali
+-th fattore di espansione arbitrario
+-th da generatori a funzioni
+-th se esiste generatore pseudocasuale, allora esiste funzione one way
